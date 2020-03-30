@@ -14,9 +14,18 @@ const GoodsList = lazy(() =>
 
 const Demo = lazy(() => import(/* webpackChunkName: "Demo" */ '@/pages/Demo'));
 
+const Context = lazy(() =>
+  import(/* webpackChunkName: "Demo" */ '@/pages/Context')
+);
+
 export default [
   {
     path: '/',
+    name: 'Context',
+    component: Context,
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home,
   },
