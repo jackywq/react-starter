@@ -9,16 +9,16 @@ import GoodsItem from './goodsItem';
 @inject('store')
 @observer
 class GoodsList extends Component {
+  // 加载状态
+  @observable
+  loading = false;
+
   static propTypes = {
     store: PropTypes.shape({
       goodsList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
       getGoodsList: PropTypes.func.isRequired,
     }).isRequired,
   };
-
-  // 加载状态
-  @observable
-  loading = false;
 
   handleClickItem = async () => {
     const {
