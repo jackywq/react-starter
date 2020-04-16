@@ -17,6 +17,7 @@ class GoodsList extends Component {
     store: PropTypes.shape({
       goodsList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
       getGoodsList: PropTypes.func.isRequired,
+      total: PropTypes.number.isRequired,
     }).isRequired,
   };
 
@@ -31,7 +32,7 @@ class GoodsList extends Component {
 
   render() {
     const {
-      store: { goodsList },
+      store: { goodsList, total },
     } = this.props;
     return (
       <div className={s.goodsListContainer}>
@@ -40,7 +41,7 @@ class GoodsList extends Component {
             <GoodsItem key={goodsItem.id} {...goodsItem} />
           ))}
         </ul>
-
+        <div className={s.total}>{total}</div>
         <Button
           type="primary"
           className={s.btn}
