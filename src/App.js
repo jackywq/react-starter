@@ -1,31 +1,28 @@
-import React, { Component, Suspense } from 'react';
-import { Router, Switch, Route } from 'react-router';
+import React, { Component } from 'react';
+import { Tabs } from 'antd';
 import { createBrowserHistory } from 'history';
-
-import routes from '@/router';
+import Routers from './routers';
 import '@/App.less';
 
-import Loading from '@/components/Loading';
-
-const historyInstance = createBrowserHistory();
+const history = createBrowserHistory();
+const { TabPane } = Tabs;
 
 export default class App extends Component {
+  handleTabsChange = val => {
+    history.push(`/${val}`);
+  };
+
   render() {
     return (
-      <Router history={historyInstance}>
-        <Suspense maxDuration={1000} fallback={<Loading />}>
-          <Switch>
-            {routes.map(({ path, component: ComponentItem }) => (
-              <Route
-                exact
-                key={path}
-                path={path}
-                render={() => <ComponentItem />}
-              />
-            ))}
-          </Switch>
-        </Suspense>
-      </Router>
+      <div>
+        <Tabs defaultActiveKey="home" onChange={this.handleTabsChange}>
+          <TabPane tab="首页" key="home" />
+          <TabPane tab="关于" key="about" />
+          <TabPane tab="列表" key="list" />
+          <TabPane tab="上下文" key="context" />
+        </Tabs>
+        <Routers history={history} />
+      </div>
     );
   }
 }

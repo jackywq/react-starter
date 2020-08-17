@@ -20,7 +20,7 @@ const Context = lazy(() =>
 
 export default [
   {
-    path: '/',
+    path: '/context',
     name: 'Context',
     component: Context,
   },
