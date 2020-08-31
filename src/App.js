@@ -8,16 +8,29 @@ const history = createBrowserHistory();
 const { TabPane } = Tabs;
 
 export default class App extends Component {
-  handleTabsChange = val => {
-    history.push(`/${val}`);
+  state = {
+    activeKey: 'home',
+  };
+
+  componentDidMount() {
+    const { pathname } = window.location;
+    this.setState({
+      activeKey: pathname.slice(1),
+    });
+  }
+
+  handleTabsChange = activeKey => {
+    this.setState({ activeKey });
+    history.push(`/${activeKey}`);
   };
 
   render() {
+    const { activeKey } = this.state;
     return (
       <div>
-        <Tabs defaultActiveKey="home" onChange={this.handleTabsChange}>
+        <Tabs activeKey={activeKey} onChange={this.handleTabsChange}>
           <TabPane tab="首页" key="home" />
-          <TabPane tab="关于" key="about" />
+          <TabPane tab="hooks" key="hooks" />
           <TabPane tab="列表" key="list" />
           <TabPane tab="上下文" key="context" />
         </Tabs>

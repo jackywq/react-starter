@@ -2,8 +2,8 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ '@/pages/Home'));
 
-const About = lazy(() =>
-  import(/* webpackChunkName: "About" */ '@/pages/About')
+const Hooks = lazy(() =>
+  import(/* webpackChunkName: "About" */ '@/pages/Hooks')
 );
 
 const Edit = lazy(() => import(/* webpackChunkName: "Edit" */ '@/pages/Edit'));
@@ -30,9 +30,9 @@ export default [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/hooks',
+    name: 'Hooks',
+    component: Hooks,
   },
   {
     path: '/edit',

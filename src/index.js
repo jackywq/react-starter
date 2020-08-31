@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 
 // 本地化
-import { LocaleProvider } from 'antd';
+import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 // 语法高亮
@@ -16,9 +16,9 @@ const store = new Store();
 
 ReactDOM.render(
   <Provider store={store}>
-    <LocaleProvider locale={zhCN}>
+    <ConfigProvider locale={zhCN}>
       <App />
-    </LocaleProvider>
+    </ConfigProvider>
   </Provider>,
   document.getElementById('root')
 );
