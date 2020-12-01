@@ -7,6 +7,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HtmlIncludeAssetsPlugin from 'html-webpack-include-assets-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import glob from 'glob-all';
+import path from 'path';
+import PurgeCSSPlugin from 'purgecss-webpack-plugin';
 import webpackConfigBase from './webpack.config.base.babel';
 import paths from './paths';
 import urls from './urls';
@@ -113,6 +116,10 @@ const webpackConfigProd = {
       chunkFilename: isProd ? 'css/[id].[contenthash:8].css' : '[id].css',
     }),
 
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true }),
+    }),
+
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
@@ -170,7 +177,7 @@ const webpackConfigProd = {
           }
           return content;
         },
-        ignore: 'index.html',
+        ignore: ['index.html'],
       },
     ]),
   ].filter(Boolean),
