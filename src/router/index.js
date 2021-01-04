@@ -14,6 +14,10 @@ const GoodsList = lazy(() =>
 
 const Demo = lazy(() => import(/* webpackChunkName: "Demo" */ '@/pages/Demo'));
 
+const LifeCycle = lazy(() =>
+  import(/* webpackChunkName: "Demo" */ '@/pages/LifeCycle/parent')
+);
+
 const Context = lazy(() =>
   import(/* webpackChunkName: "Demo" */ '@/pages/Context')
 );
@@ -43,6 +47,11 @@ export default [
     path: '/list',
     name: 'List',
     component: GoodsList,
+  },
+  {
+    path: '/lifeCycle',
+    name: 'lifeCycle',
+    component: LifeCycle,
   },
   {
     path: '/demo',

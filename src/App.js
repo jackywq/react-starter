@@ -33,6 +33,7 @@ export default class App extends Component {
           <TabPane tab="hooks" key="hooks" />
           <TabPane tab="列表" key="list" />
           <TabPane tab="上下文" key="context" />
+          <TabPane tab="lifecycle" key="lifecycle" />
         </Tabs>
         <Routers history={history} />
       </div>
