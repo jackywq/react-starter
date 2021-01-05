@@ -1,48 +1,49 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { Button } from 'antd';
 
 const childStyle = {
   padding: 20,
   margin: 20,
-  border: '1px solid black',
+  backgroundColor: 'LightSkyBlue',
 };
 
-const TAG = 'Child 组件：';
+const NAME = 'Child 组件：';
 
 export default class Child extends Component {
-  constructor(props) {
-    super(props);
-    console.log(TAG, 'constructor');
+  constructor() {
+    super();
+    console.log(NAME, 'constructor');
     this.state = {
       counter: 0,
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(TAG, 'getDerivedStateFromProps');
+    console.log(NAME, 'getDerivedStateFromProps');
     return null;
   }
 
   componentDidMount() {
-    console.log(TAG, 'componentDidMount');
+    console.log(NAME, 'componentDidMount');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(TAG, 'shouldComponentUpdate');
+    console.log(NAME, 'shouldComponentUpdate');
     return true;
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log(TAG, 'getSnapshotBeforeUpdate');
+    console.log(NAME, 'getSnapshotBeforeUpdate');
     return null;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log(TAG, 'componentDidUpdate');
+    console.log(NAME, 'componentDidUpdate');
   }
 
   componentWillUnmount() {
-    console.log(TAG, 'componentWillUnmount');
+    console.log(NAME, 'componentWillUnmount');
   }
 
   changeCounter = () => {
@@ -53,15 +54,15 @@ export default class Child extends Component {
   };
 
   render() {
-    console.log(TAG, 'render');
-    const { num } = this.props;
+    console.log(NAME, 'render');
+    const { count } = this.props;
     const { counter } = this.state;
     return (
       <div style={childStyle}>
-        <p>子组件</p>
-        <p>父组件传过来的属性 num ： {num}</p>
-        <p>自身状态 counter ： {counter}</p>
-        <button onClick={this.changeCounter}>改变自身状态 counter</button>
+        <h3>子组件</h3>
+        <p>父组件传过来的属性 count ： {count}</p>
+        <p>子组件自身状态 counter ： {counter}</p>
+        <Button onClick={this.changeCounter}>改变自身状态 counter</Button>
       </div>
     );
   }

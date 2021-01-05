@@ -1,60 +1,60 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-
+import { Button } from 'antd';
 import Child from './child';
 
 const parentStyle = {
   padding: 40,
   margin: 20,
-  border: '1px solid pink',
+  backgroundColor: 'LightCyan',
 };
 
-const TAG = 'Parent 组件：';
+const NAME = 'Parent 组件：';
 
 export default class Parent extends Component {
-  constructor(props) {
-    super(props);
-    console.log(TAG, 'constructor');
+  constructor() {
+    super();
+    console.log(NAME, 'constructor');
     this.state = {
-      num: 0,
+      count: 0,
       mountChild: true,
     };
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(TAG, 'getDerivedStateFromProps');
+    console.log(NAME, 'getDerivedStateFromProps');
     return null;
   }
 
   componentDidMount() {
-    console.log(TAG, 'componentDidMount');
+    console.log(NAME, 'componentDidMount');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(TAG, 'shouldComponentUpdate');
+    console.log(NAME, 'shouldComponentUpdate');
     return true;
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log(TAG, 'getSnapshotBeforeUpdate');
+    console.log(NAME, 'getSnapshotBeforeUpdate');
     return null;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log(TAG, 'componentDidUpdate');
+    console.log(NAME, 'componentDidUpdate');
   }
 
   componentWillUnmount() {
-    console.log(TAG, 'componentWillUnmount');
+    console.log(NAME, 'componentWillUnmount');
   }
 
   /**
-   * 修改传给子组件属性 num 的方法
+   * 修改传给子组件属性 count 的方法
    */
   changeNum = () => {
-    let { num } = this.state;
+    let { count } = this.state;
     this.setState({
-      num: ++num,
+      count: ++count,
     });
   };
 
@@ -69,18 +69,18 @@ export default class Parent extends Component {
   };
 
   render() {
-    console.log(TAG, 'render');
-    const { num, mountChild } = this.state;
+    console.log(NAME, 'render');
+    const { count, mountChild } = this.state;
     return (
       <div style={parentStyle}>
         <div>
-          <p>父组件</p>
-          <button onClick={this.changeNum}>改变传给子组件的属性 num</button>
+          <h3>父组件</h3>
+          <Button onClick={this.changeNum}>改变传给子组件的属性 count</Button>
           <br />
           <br />
-          <button onClick={this.toggleMountChild}>卸载 / 挂载子组件</button>
+          <Button onClick={this.toggleMountChild}>卸载 / 挂载子组件</Button>
         </div>
-        {mountChild ? <Child num={num} /> : null}
+        {mountChild ? <Child count={count} /> : null}
       </div>
     );
   }
