@@ -34,6 +34,7 @@ export default class App extends Component {
           <TabPane tab="列表" key="list" />
           <TabPane tab="上下文" key="context" />
           <TabPane tab="lifecycle" key="lifecycle" />
+          <TabPane tab="setState同异步" key="setState" />
         </Tabs>
         <Routers history={history} />
       </div>

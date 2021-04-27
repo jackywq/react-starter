@@ -1,25 +1,29 @@
 import { lazy } from 'react';
 
-const Home = lazy(() => import(/* webpackChunkName: "Home" */ '@/pages/Home'));
+const Home = lazy(() => import('@/pages/Home'));
 
 const Hooks = lazy(() =>
-  import(/* webpackChunkName: "About" */ '@/pages/Hooks')
+  import('@/pages/Hooks')
 );
 
-const Edit = lazy(() => import(/* webpackChunkName: "Edit" */ '@/pages/Edit'));
+const Edit = lazy(() => import('@/pages/Edit'));
 
 const GoodsList = lazy(() =>
-  import(/* webpackChunkName: "List" */ '@/pages/List/goodsList')
+  import('@/pages/List/goodsList')
 );
 
-const Demo = lazy(() => import(/* webpackChunkName: "Demo" */ '@/pages/Demo'));
+const Demo = lazy(() => import('@/pages/Demo'));
 
 const LifeCycle = lazy(() =>
-  import(/* webpackChunkName: "Demo" */ '@/pages/LifeCycle/parent')
+  import('@/pages/LifeCycle/parent')
 );
 
 const Context = lazy(() =>
-  import(/* webpackChunkName: "Demo" */ '@/pages/Context')
+  import('@/pages/Context')
+);
+
+const SetState = lazy(() =>
+  import('@/pages/SetState')
 );
 
 export default [
@@ -50,12 +54,17 @@ export default [
   },
   {
     path: '/lifeCycle',
-    name: 'lifeCycle',
+    name: 'LifeCycle',
     component: LifeCycle,
   },
   {
     path: '/demo',
     name: 'Demo',
     component: Demo,
+  },
+  {
+    path: '/setState',
+    name: 'SetState',
+    component: SetState,
   },
 ];
