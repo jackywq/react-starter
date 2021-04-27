@@ -2,29 +2,19 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
 
-const Hooks = lazy(() =>
-  import('@/pages/Hooks')
-);
+const Hooks = lazy(() => import('@/pages/Hooks'));
 
 const Edit = lazy(() => import('@/pages/Edit'));
 
-const GoodsList = lazy(() =>
-  import('@/pages/List/goodsList')
-);
+const GoodsList = lazy(() => import('@/pages/List/goodsList'));
 
 const Demo = lazy(() => import('@/pages/Demo'));
 
-const LifeCycle = lazy(() =>
-  import('@/pages/LifeCycle/parent')
-);
+const LifeCycle = lazy(() => import('@/pages/LifeCycle/parent'));
 
-const Context = lazy(() =>
-  import('@/pages/Context')
-);
+const Context = lazy(() => import('@/pages/Context'));
 
-const SetState = lazy(() =>
-  import('@/pages/SetState')
-);
+const SetState = lazy(() => import('@/pages/SetState'));
 
 export default [
   {

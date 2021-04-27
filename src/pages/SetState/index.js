@@ -9,7 +9,11 @@ export default class SetState extends Component {
   };
 
   componentDidMount() {
-    this.setState({ parentNum: this.state.parentNum + 1 });
+    this.setState(prevState => {
+      return {
+        parentNum: prevState.parentNum + 1,
+      };
+    });
   }
 
   render() {

@@ -74,5 +74,14 @@ module.exports = {
     // ESLint plugin for prettier formatting
     // https://github.com/prettier/eslint-plugin-prettier
     'prettier/prettier': 'error',
+
+    // 允许在setState内部使用state
+    // 'react/no-access-state-in-setstate': 'off',
+
+    // js不强制要求使用解构赋值规则
+    // 'destructuring-assignment': 'off',
+
+    // [eslint-plugin-react] react不强制要求使用解构赋值规则
+    // 'react/destructuring-assignment': 'off',
   },
 };
