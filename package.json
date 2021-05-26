@@ -33,7 +33,7 @@
     "core-js": "^2.6.5",
     "history": "^4.9.0",
     "js-cookie": "^2.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mobx": "^4.9.3",
     "mobx-react": "^5.4.3",
     "mockjs": "^1.0.1-beta3",
