@@ -75,6 +75,8 @@ module.exports = {
     // https://github.com/prettier/eslint-plugin-prettier
     'prettier/prettier': 'error',
 
+    'react/sort-comp': 'off',
+
     // 允许在setState内部使用state
     // 'react/no-access-state-in-setstate': 'off',
 

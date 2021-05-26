@@ -5,12 +5,12 @@ import MyContext from './context';
 const FormItem = Form.Item;
 
 export default class GrandSon extends React.Component {
+  static contextType = MyContext;
+
   handleClick = (theme, toggleTheme) => {
     const newTheme = theme === 'black' ? 'red' : 'black';
     toggleTheme(newTheme);
   };
-
-  static contextType = MyContext;
 
   render() {
     const { theme, toggleTheme } = this.context;
