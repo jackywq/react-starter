@@ -29,7 +29,7 @@ FormItemRender.propTypes = {
     label: PropTypes.string,
     key: PropTypes.number,
     required: PropTypes.bool,
-    component: PropTypes.any,
+    component: PropTypes.element,
     options: PropTypes.shape({}),
     rules: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
