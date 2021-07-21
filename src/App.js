@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-import { createBrowserHistory } from 'history';
+import history from '@/utils/history';
 import Routers from './routers';
 import '@/App.less';
 
-const history = createBrowserHistory();
 const { TabPane } = Tabs;
 
 export default class App extends Component {
