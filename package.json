@@ -38,7 +38,7 @@
     "mobx-react": "^5.4.3",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.24.0",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "qs": "^6.7.0",
     "react": "^16.8.6",
