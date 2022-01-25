@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
 import history from '@/utils/history';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import Routers from './routers';
 import '@/App.less';
 
 const { TabPane } = Tabs;
 
-export default class App extends Component {
+@ErrorBoundary
+class App extends Component {
   state = {
     activeKey: 'home',
   };
@@ -34,9 +36,12 @@ export default class App extends Component {
           <TabPane tab="上下文" key="context" />
           <TabPane tab="lifecycle" key="lifecycle" />
           <TabPane tab="setState同异步" key="setState" />
+          <TabPane tab="useEffect和useLayoutEffect区别" key="effectHooks" />
         </Tabs>
         <Routers history={history} />
       </div>
     );
   }
 }
+
+export default App;

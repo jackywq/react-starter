@@ -16,6 +16,8 @@ const Context = lazy(() => import('@/pages/Context'));
 
 const SetState = lazy(() => import('@/pages/SetState'));
 
+const EffectHooks = lazy(() => import('@/pages/EffectHooks'));
+
 export default [
   {
     path: '/context',
@@ -56,5 +58,10 @@ export default [
     path: '/setState',
     name: 'SetState',
     component: SetState,
+  },
+  {
+    path: '/effectHooks',
+    name: 'EffectHooks',
+    component: EffectHooks,
   },
 ];
