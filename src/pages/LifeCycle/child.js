@@ -19,7 +19,7 @@ export default class Child extends Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps, state) {
     console.log(NAME, 'getDerivedStateFromProps');
     return null;
   }
