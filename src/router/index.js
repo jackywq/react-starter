@@ -18,6 +18,10 @@ const SetState = lazy(() => import('@/pages/SetState'));
 
 const EffectHooks = lazy(() => import('@/pages/EffectHooks'));
 
+const UseMemoAndCallbackHooks = lazy(() =>
+  import('@/pages/UseMemoAndCallbackHooks')
+);
+
 export default [
   {
     path: '/context',
@@ -63,5 +67,10 @@ export default [
     path: '/effectHooks',
     name: 'EffectHooks',
     component: EffectHooks,
+  },
+  {
+    path: '/useMemoAndCallbackHooks',
+    name: 'useMemoAndCallbackHooks',
+    component: UseMemoAndCallbackHooks,
   },
 ];

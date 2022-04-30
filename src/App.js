@@ -37,6 +37,10 @@ class App extends Component {
           <TabPane tab="lifecycle" key="lifecycle" />
           <TabPane tab="setState同异步" key="setState" />
           <TabPane tab="useEffect和useLayoutEffect区别" key="effectHooks" />
+          <TabPane
+            tab="useMemo和useCallback区别"
+            key="useMemoAndCallbackHooks"
+          />
         </Tabs>
         <Routers history={history} />
       </div>
