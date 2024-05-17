@@ -56,6 +56,8 @@ module.exports = {
     'react/sort-comp': 'off',
     'no-unused-vars': 'off',
     'no-console': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-shadow': 'off',
 
     // 允许在setState内部使用state
     // 'react/no-access-state-in-setstate': 'off',

@@ -41,6 +41,7 @@ class App extends Component {
             tab="useMemo和useCallback区别"
             key="useMemoAndCallbackHooks"
           />
+          <TabPane tab="ahooks测试" key="ahooks" />
         </Tabs>
         <Routers history={history} />
       </div>
