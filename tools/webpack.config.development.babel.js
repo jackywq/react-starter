@@ -6,7 +6,7 @@ import proxyConfigAll from './proxy.config';
 import getValueByEnv from './getValueByEnv';
 
 const HOST = process.env.HOST || '0.0.0.0'; // 本机IP
-const PORT = process.env.PORT || 3000; // 端口号
+const PORT = process.env.PORT || 3030; // 端口号
 
 const proxyCurrent = getValueByEnv(proxyConfigAll, { defaultEnv: 'dev' });
 
