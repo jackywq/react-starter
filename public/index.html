@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>React Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Project</title>
 </head>
+
 <body>
-  <div id="root"></div>
+    <div id="root"></div>
+    <% if (process.env.NODE_ENV==='development' ) { %>
+        <div
+            style="left: -70px;bottom: -50px;width: 200px;height: 100px;position: fixed;background-color: #fff1f0;border: 1px solid #ffa39e;transform: rotate(225deg);z-index: 99999;">
+            <p
+                style="text-align: center;position: fixed;transform: rotate(180deg);left: 85px;bottom: 0;/* width: 60px; */height: 14px;font-size: 18px; font-weight: bold; z-index: 100000;">
+                开发环境</p>
+        </div>
+        <% } %>
 </body>
+
 </html>
