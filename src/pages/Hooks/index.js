@@ -4,6 +4,7 @@ import UseRefDemo from './APIs/useRefDemo';
 import UseEffectDemo from './APIs/useEffectDemo';
 import UseContextDemo from './APIs/useContextDemo';
 import UseCallbackDemo from './APIs/useCallbackDemo';
+import CustomerHooksDemo from './APIs/customerHooksDemo';
 import styles from './index.module.less';
 
 const Hooks = () => {
@@ -18,6 +19,7 @@ const Hooks = () => {
       <UseEffectDemo />
       <UseContextDemo />
       <UseCallbackDemo />
+      <CustomerHooksDemo />
     </div>
   );
 };
