@@ -49,7 +49,6 @@ function useECharts(data, onHover) {
     const option = {
       tooltip: {
         trigger: 'axis',
-        enterable: false,
         backgroundColor: 'rgba(0,0,0,0)',
         borderColor: 'rgba(0,0,0,0)',
         borderWidth: 0,
@@ -66,6 +65,9 @@ function useECharts(data, onHover) {
           },
         },
         formatter: () => '',
+      },
+      legend: {
+        show: false,
       },
       grid: {
         left: '3%',
@@ -167,8 +169,13 @@ function useECharts(data, onHover) {
     chart.setOption(option);
 
     chart.on('showTip', params => {
-      if (onHover && params.batch && params.batch.length > 0) {
-        const index = params.batch[0].dataIndex;
+      if (onHover && data.length > 0) {
+        let index = 0;
+        if (params.batch && params.batch.length > 0) {
+          index = params.batch[0].dataIndex;
+        } else if (params.dataIndex !== undefined) {
+          index = params.dataIndex;
+        }
         const hoverData = data[index];
         if (hoverData) {
           onHover(hoverData);
@@ -204,7 +211,6 @@ function useECharts(data, onHover) {
 export default function ChartsPage() {
   const [currentRange, setCurrentRange] = useState('6months');
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [hoverData, setHoverData] = useState(null);
 
   const handleHover = useCallback(data => {
@@ -214,11 +220,9 @@ export default function ChartsPage() {
   const chartRef = useECharts(data, handleHover);
 
   const loadData = useCallback(async range => {
-    setLoading(true);
     setHoverData(null);
     const result = await fetchChartData(range);
     setData(result);
-    setLoading(false);
   }, []);
 
   useEffect(() => {
